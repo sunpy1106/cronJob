@@ -8,7 +8,7 @@
       "generateName": "example-foo-7bb858bc89-",
       "namespace": "default",
       "uid": "267af4bf-189d-4ad1-b288-775348b62d2b",
-      "resourceVersion": "1252891",
+      "resourceVersion": "1252893",
       "creationTimestamp": "2022-11-04T04:55:14Z",
       "labels": {
         "app": "nginx",
@@ -66,6 +66,48 @@
               "f:terminationGracePeriodSeconds": {}
             }
           }
+        },
+        {
+          "manager": "kubelet",
+          "operation": "Update",
+          "apiVersion": "v1",
+          "time": "2022-11-04T04:55:15Z",
+          "fieldsType": "FieldsV1",
+          "fieldsV1": {
+            "f:status": {
+              "f:conditions": {
+                "k:{\"type\":\"ContainersReady\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Initialized\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:status": {},
+                  "f:type": {}
+                },
+                "k:{\"type\":\"Ready\"}": {
+                  ".": {},
+                  "f:lastProbeTime": {},
+                  "f:lastTransitionTime": {},
+                  "f:message": {},
+                  "f:reason": {},
+                  "f:status": {},
+                  "f:type": {}
+                }
+              },
+              "f:containerStatuses": {},
+              "f:hostIP": {},
+              "f:startTime": {}
+            }
+          },
+          "subresource": "status"
         }
       ]
     },
@@ -157,10 +199,50 @@
       "phase": "Pending",
       "conditions": [
         {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2022-11-04T04:55:15Z"
+        },
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2022-11-04T04:55:15Z",
+          "reason": "ContainersNotReady",
+          "message": "containers with unready status: [nginx]"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2022-11-04T04:55:15Z",
+          "reason": "ContainersNotReady",
+          "message": "containers with unready status: [nginx]"
+        },
+        {
           "type": "PodScheduled",
           "status": "True",
           "lastProbeTime": null,
           "lastTransitionTime": "2022-11-04T04:55:14Z"
+        }
+      ],
+      "hostIP": "172.20.0.2",
+      "startTime": "2022-11-04T04:55:15Z",
+      "containerStatuses": [
+        {
+          "name": "nginx",
+          "state": {
+            "waiting": {
+              "reason": "ContainerCreating"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "nginx:latest",
+          "imageID": "",
+          "started": false
         }
       ],
       "qosClass": "BestEffort"
