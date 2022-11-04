@@ -8,7 +8,7 @@
       "generateName": "example-foo-7bb858bc89-",
       "namespace": "default",
       "uid": "267af4bf-189d-4ad1-b288-775348b62d2b",
-      "resourceVersion": "1252893",
+      "resourceVersion": "1252915",
       "creationTimestamp": "2022-11-04T04:55:14Z",
       "labels": {
         "app": "nginx",
@@ -71,7 +71,7 @@
           "manager": "kubelet",
           "operation": "Update",
           "apiVersion": "v1",
-          "time": "2022-11-04T04:55:15Z",
+          "time": "2022-11-04T04:55:24Z",
           "fieldsType": "FieldsV1",
           "fieldsV1": {
             "f:status": {
@@ -80,8 +80,6 @@
                   ".": {},
                   "f:lastProbeTime": {},
                   "f:lastTransitionTime": {},
-                  "f:message": {},
-                  "f:reason": {},
                   "f:status": {},
                   "f:type": {}
                 },
@@ -96,14 +94,21 @@
                   ".": {},
                   "f:lastProbeTime": {},
                   "f:lastTransitionTime": {},
-                  "f:message": {},
-                  "f:reason": {},
                   "f:status": {},
                   "f:type": {}
                 }
               },
               "f:containerStatuses": {},
               "f:hostIP": {},
+              "f:phase": {},
+              "f:podIP": {},
+              "f:podIPs": {
+                ".": {},
+                "k:{\"ip\":\"10.244.0.7\"}": {
+                  ".": {},
+                  "f:ip": {}
+                }
+              },
               "f:startTime": {}
             }
           },
@@ -196,7 +201,7 @@
       "preemptionPolicy": "PreemptLowerPriority"
     },
     "status": {
-      "phase": "Pending",
+      "phase": "Running",
       "conditions": [
         {
           "type": "Initialized",
@@ -206,19 +211,15 @@
         },
         {
           "type": "Ready",
-          "status": "False",
+          "status": "True",
           "lastProbeTime": null,
-          "lastTransitionTime": "2022-11-04T04:55:15Z",
-          "reason": "ContainersNotReady",
-          "message": "containers with unready status: [nginx]"
+          "lastTransitionTime": "2022-11-04T04:55:24Z"
         },
         {
           "type": "ContainersReady",
-          "status": "False",
+          "status": "True",
           "lastProbeTime": null,
-          "lastTransitionTime": "2022-11-04T04:55:15Z",
-          "reason": "ContainersNotReady",
-          "message": "containers with unready status: [nginx]"
+          "lastTransitionTime": "2022-11-04T04:55:24Z"
         },
         {
           "type": "PodScheduled",
@@ -228,21 +229,28 @@
         }
       ],
       "hostIP": "172.20.0.2",
+      "podIP": "10.244.0.7",
+      "podIPs": [
+        {
+          "ip": "10.244.0.7"
+        }
+      ],
       "startTime": "2022-11-04T04:55:15Z",
       "containerStatuses": [
         {
           "name": "nginx",
           "state": {
-            "waiting": {
-              "reason": "ContainerCreating"
+            "running": {
+              "startedAt": "2022-11-04T04:55:24Z"
             }
           },
           "lastState": {},
-          "ready": false,
+          "ready": true,
           "restartCount": 0,
-          "image": "nginx:latest",
-          "imageID": "",
-          "started": false
+          "image": "docker.io/library/nginx:latest",
+          "imageID": "docker.io/library/nginx@sha256:943c25b4b66b332184d5ba6bb18234273551593016c0e0ae906bab111548239f",
+          "containerID": "containerd://0d021b742579f8f9d785c2c527f1a3378a507100a79c62e1be89261450719520",
+          "started": true
         }
       ],
       "qosClass": "BestEffort"
