@@ -1,5 +1,5 @@
 {
-  "type": "ADDED",
+  "type": "MODIFIED",
   "object": {
     "kind": "Pod",
     "apiVersion": "v1",
@@ -8,7 +8,7 @@
       "generateName": "example-foo-7bb858bc89-",
       "namespace": "default",
       "uid": "267af4bf-189d-4ad1-b288-775348b62d2b",
-      "resourceVersion": "1252885",
+      "resourceVersion": "1252891",
       "creationTimestamp": "2022-11-04T04:55:14Z",
       "labels": {
         "app": "nginx",
@@ -132,6 +132,7 @@
       "dnsPolicy": "ClusterFirst",
       "serviceAccountName": "default",
       "serviceAccount": "default",
+      "nodeName": "kind-control-plane",
       "securityContext": {},
       "schedulerName": "default-scheduler",
       "tolerations": [
@@ -154,6 +155,14 @@
     },
     "status": {
       "phase": "Pending",
+      "conditions": [
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2022-11-04T04:55:14Z"
+        }
+      ],
       "qosClass": "BestEffort"
     }
   }
