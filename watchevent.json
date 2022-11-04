@@ -4,12 +4,12 @@
     "kind": "Pod",
     "apiVersion": "v1",
     "metadata": {
-      "name": "example-foo-7bb858bc89-2jc6d",
+      "name": "example-foo-7bb858bc89-67kdj",
       "generateName": "example-foo-7bb858bc89-",
       "namespace": "default",
-      "uid": "dde8ac59-d665-4c74-99bf-19f4ccd67322",
-      "resourceVersion": "879421",
-      "creationTimestamp": "2022-10-13T06:35:09Z",
+      "uid": "267af4bf-189d-4ad1-b288-775348b62d2b",
+      "resourceVersion": "1252885",
+      "creationTimestamp": "2022-11-04T04:55:14Z",
       "labels": {
         "app": "nginx",
         "controller": "example-foo",
@@ -30,7 +30,7 @@
           "manager": "kube-controller-manager",
           "operation": "Update",
           "apiVersion": "v1",
-          "time": "2022-10-13T06:35:09Z",
+          "time": "2022-11-04T04:55:14Z",
           "fieldsType": "FieldsV1",
           "fieldsV1": {
             "f:metadata": {
@@ -66,60 +66,13 @@
               "f:terminationGracePeriodSeconds": {}
             }
           }
-        },
-        {
-          "manager": "kubelet",
-          "operation": "Update",
-          "apiVersion": "v1",
-          "time": "2022-11-01T07:26:07Z",
-          "fieldsType": "FieldsV1",
-          "fieldsV1": {
-            "f:status": {
-              "f:conditions": {
-                "k:{\"type\":\"ContainersReady\"}": {
-                  ".": {},
-                  "f:lastProbeTime": {},
-                  "f:lastTransitionTime": {},
-                  "f:status": {},
-                  "f:type": {}
-                },
-                "k:{\"type\":\"Initialized\"}": {
-                  ".": {},
-                  "f:lastProbeTime": {},
-                  "f:lastTransitionTime": {},
-                  "f:status": {},
-                  "f:type": {}
-                },
-                "k:{\"type\":\"Ready\"}": {
-                  ".": {},
-                  "f:lastProbeTime": {},
-                  "f:lastTransitionTime": {},
-                  "f:status": {},
-                  "f:type": {}
-                }
-              },
-              "f:containerStatuses": {},
-              "f:hostIP": {},
-              "f:phase": {},
-              "f:podIP": {},
-              "f:podIPs": {
-                ".": {},
-                "k:{\"ip\":\"10.244.0.3\"}": {
-                  ".": {},
-                  "f:ip": {}
-                }
-              },
-              "f:startTime": {}
-            }
-          },
-          "subresource": "status"
         }
       ]
     },
     "spec": {
       "volumes": [
         {
-          "name": "kube-api-access-f2gjm",
+          "name": "kube-api-access-q8xxf",
           "projected": {
             "sources": [
               {
@@ -164,7 +117,7 @@
           "resources": {},
           "volumeMounts": [
             {
-              "name": "kube-api-access-f2gjm",
+              "name": "kube-api-access-q8xxf",
               "readOnly": true,
               "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
             }
@@ -179,7 +132,6 @@
       "dnsPolicy": "ClusterFirst",
       "serviceAccountName": "default",
       "serviceAccount": "default",
-      "nodeName": "kind-control-plane",
       "securityContext": {},
       "schedulerName": "default-scheduler",
       "tolerations": [
@@ -201,66 +153,7 @@
       "preemptionPolicy": "PreemptLowerPriority"
     },
     "status": {
-      "phase": "Running",
-      "conditions": [
-        {
-          "type": "Initialized",
-          "status": "True",
-          "lastProbeTime": null,
-          "lastTransitionTime": "2022-10-13T06:35:09Z"
-        },
-        {
-          "type": "Ready",
-          "status": "True",
-          "lastProbeTime": null,
-          "lastTransitionTime": "2022-11-01T07:26:06Z"
-        },
-        {
-          "type": "ContainersReady",
-          "status": "True",
-          "lastProbeTime": null,
-          "lastTransitionTime": "2022-11-01T07:26:06Z"
-        },
-        {
-          "type": "PodScheduled",
-          "status": "True",
-          "lastProbeTime": null,
-          "lastTransitionTime": "2022-10-13T06:35:09Z"
-        }
-      ],
-      "hostIP": "172.20.0.2",
-      "podIP": "10.244.0.3",
-      "podIPs": [
-        {
-          "ip": "10.244.0.3"
-        }
-      ],
-      "startTime": "2022-10-13T06:35:09Z",
-      "containerStatuses": [
-        {
-          "name": "nginx",
-          "state": {
-            "running": {
-              "startedAt": "2022-11-01T07:26:05Z"
-            }
-          },
-          "lastState": {
-            "terminated": {
-              "exitCode": 255,
-              "reason": "Unknown",
-              "startedAt": "2022-10-28T01:43:46Z",
-              "finishedAt": "2022-11-01T07:25:00Z",
-              "containerID": "containerd://14dc14a1cd241e051a440adb793adcc6d4bf3da44b62ca79f4698ea5f91c5894"
-            }
-          },
-          "ready": true,
-          "restartCount": 2,
-          "image": "docker.io/library/nginx:latest",
-          "imageID": "docker.io/library/nginx@sha256:943c25b4b66b332184d5ba6bb18234273551593016c0e0ae906bab111548239f",
-          "containerID": "containerd://dba39c40fafcee82012089acc68b753fc6e0ef4a59825e99479faeb9be27103b",
-          "started": true
-        }
-      ],
+      "phase": "Pending",
       "qosClass": "BestEffort"
     }
   }
